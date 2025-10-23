@@ -32,7 +32,7 @@ export default async function handler(req, res) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Portfolio de Nhiry <nhirlanto@gmail.com>", // ok pour démarrer
+        from: "Portfolio de Nhiry <onboarding@resend.dev>", // ok pour démarrer
         to: ["nhirlanto@gmail.com"], // <-- ton adresse
         reply_to: email,
         subject: `[Contact] ${subject}`.slice(0, 120),
