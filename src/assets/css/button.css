@@ -1,0 +1,253 @@
+/* -------------
+    SOMMAIRE
+------------- */
+
+/* @AUTHOR : Nicolas BOUDOT */
+
+/*
+    00 - GÉNÉRAL
+    01 - BOUTONS
+    02 - BOUTONS ICONS
+	03 - BOUTONS SPÉCIFIQUES
+            Navigation secondaire
+            Retour en haut de page
+    04 - LIENS
+*/
+
+
+
+/* -----------------
+  00 - GÉNÉRAL
+----------------- */
+
+/*
+  Infos :
+    1. On utilise la classe .btn pour établier les règles de bases. On lui applique toutes les propriétés
+    car cela peut aussi s'appliquer sur des éléments dont on a pas la main et ainsi surcharger les styles.
+    Ce bouton sera celui de base et donc celui le plus répendu sur tout le site.
+    2. .like_btn est utilisée sur un élement parent pour ciblée un <a> enfant.
+    On utilise un préfixe like_ pour mieux identifier son utilité.
+*/
+
+/* Bouton de base */
+.btn {
+    cursor: pointer;
+    display: inline-flex;
+	justify-content: center;
+	align-items: center;
+    background-color: var(--accent-color);
+    color: var(--bg-color-primary);
+    border: 1px solid var(--accent-color);
+    border-radius: 50px;
+    font-size: 1.6rem;
+    font-weight: 700;
+	text-align: center;
+    text-decoration: none;
+	padding: 10px 24px;
+    transition: background-color .4s, color .4s, border-color .4s;
+}
+
+    /* Hover */
+    .btn:hover {
+        background-color: var(--bg-color-primary);
+        color: var(--text-color);
+        border-color: var(--text-color);
+    }
+
+/* Bouton icon */
+.btn-icon,
+.like_btn-icon {
+    position: relative;
+    background-color: var(--c-primary);
+    color: var(--white);
+    font-family: var(--font-primary);
+}
+
+    /* Hover */
+    .btn-icon:hover,
+    .like_btn-icon:hover {
+        background-color: var(--red-dark);
+        color: var(--white);
+    }
+
+    /* Icon */
+    .btn-icon::after,
+    .like_btn-icon::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--red-dark);
+        color: var(--white);
+        font-family: 'icomoon';
+        font-size: 2.5rem;
+        font-weight: 400;
+        text-align: center;
+        height: 100%;
+        aspect-ratio: 1/1;
+        transition: background-color .4s;
+    }
+
+        /* Hover */
+        .btn-icon:hover::after,
+        .like_btn-icon:hover::after {
+            background: var(--red);
+        }
+
+
+
+/* ---------------
+  01 - BOUTONS
+--------------- */
+
+/*
+  Infos :
+    Selon la méthodologie BEM, on vient compléter le style d'une classe avec un Modifier,
+    on nomme donc nos classes .btn--secondary. Il n'y a pas de btn--primary car c'est le style par défaut.
+*/
+
+/* Bouton secondaire */
+.btn--secondary {
+    background-color: var(--c-primary);
+    color: var(--white);
+    border-color: var(--c-primary);
+}
+
+    /* Hover */
+    .btn--secondary:hover {
+        background-color: var(--c-quaternary);
+        color: var(--white);
+        border-color: transparent;
+    }
+
+/* Bouton tertiaire */
+.btn--tertiary {
+    background-color: transparent;
+    border-color: var(--white);
+    color: var(--white);
+}
+
+    /* Hover */
+    .btn--tertiary:hover {
+        background-color: transparent;
+        color: var(--c-secondary);
+        border-color: var(--c-secondary);
+    }
+
+
+
+/* ---------------------------------
+  02 - BOUTONS ICONS
+--------------------------------- */
+
+/* Exemple :
+
+    // Bouton Icon - Plus
+    .btn-icon--plus::after {
+        content: "\e92c";
+    }
+
+    // Bouton Icon - Caddie
+    .btn-icon--cart::after {
+        content: "\e90b";
+    }
+*/
+
+
+
+/* -----------------------------
+    03 - BOUTONS SPÉCIFIQUES
+----------------------------- */
+
+/*
+  Infos :
+    On stylise ici les boutons unique
+*/
+
+/* Bouton Lien */
+.btn-link {
+    position: relative;
+    color: var(--c-secondary);
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+    .btn-link::after {
+        content: "";
+        position: absolute;
+        top: calc(100% + 3px);
+        left: 0;
+        background-color: #707070;
+        width: 70%;
+        height: 1px;
+        transition: width .2s;
+    }
+
+    /* Hover */
+    .btn-link:hover::after {
+        width: 100%;
+    }
+
+
+/* Retour en haut de page */
+.btn-scroll-top {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray-400);
+    border: 3px solid var(--gray-400);
+    border-radius: 50%;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    padding: 15px;
+    transform: rotate(-90deg);
+    z-index: 1;
+}
+
+    @media (max-width: 991px) {
+        .btn-scroll-top {
+            right: 20px;
+            bottom: 70px;
+        }
+    }
+
+    /* Before */
+    .btn-scroll-top::before {
+        content: "\e90d";
+        font-family: 'icomoon';
+        font-size: 2.5rem;
+        transition: color .4s, transform .4s;
+    }
+
+    /* Hover */
+    .btn-scroll-top:hover::before {
+        content: "\e90d";
+        color: var(--c-primary);
+        transform: translateX(6px);
+    }
+
+
+
+/* -----------------------------
+    04 - LIENS
+----------------------------- */
+
+/* Exemple :
+
+    // Lien sur fond sombre
+    .link-white {
+        color: var(--white);
+    }
+
+    // Lien à la couleur différente du <a> par défaut
+    .link-secondary {
+        color: var(--c-secondary);
+    }
+*/

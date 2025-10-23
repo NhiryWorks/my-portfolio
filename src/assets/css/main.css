@@ -1,0 +1,234 @@
+@import url('./boostrap-grid-5.css');
+@import url('./variables.css');
+@import url('./reset.css');
+@import url('./fonts.css');
+@import url('./button.css');
+@import url('./transition.css');
+@import url('../fonts/icomoon/style.css');
+
+/* ---------------------------------------------
+  01 - IMPORT DES FONTS
+        Principale - Nunito
+--------------------------------------------- */
+
+/* Light */
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito/Nunito-Light.woff2') format('woff2'),
+        url('../fonts/Nunito/Nunito-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Black */
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito/Nunito-Black.woff2') format('woff2'),
+        url('../fonts/Nunito/Nunito-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito/Nunito-Bold.woff2') format('woff2'),
+        url('../fonts/Nunito/Nunito-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito/Nunito-Medium.woff2') format('woff2'),
+        url('../fonts/Nunito/Nunito-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito/Nunito-Regular.woff2') format('woff2'),
+        url('../fonts/Nunito/Nunito-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* SemiBold */
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito/Nunito-SemiBold.woff2') format('woff2'),
+        url('../fonts/Nunito/Nunito-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ---------------------------------------------
+  01 - IMPORT DES FONTS
+        Secondaire - Roboto
+--------------------------------------------- */
+
+/* Black */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Black.woff2') format('woff2'),
+        url('../fonts/Roboto/Roboto-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Light.woff2') format('woff2'),
+        url('../fonts/Roboto/Roboto-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Bold.woff2') format('woff2'),
+        url('../fonts/Roboto/Roboto-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Regular.woff2') format('woff2'),
+        url('../fonts/Roboto/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Medium.woff2') format('woff2'),
+        url('../fonts/Roboto/Roboto-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* SemiBold */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-SemiBold.woff2') format('woff2'),
+        url('../fonts/Roboto/Roboto-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ---------------------------------------------
+  01 - IMPORT DES FONTS
+        Tertiaire - spaceGrotesk
+--------------------------------------------- */
+/* Semibold */
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('../fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.woff2') format('woff2'),
+        url('../fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ---------------------
+  02 - RÈGLES DE BASE
+--------------------- */
+
+html {
+	font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+    background-color: var(--bg-color-primary);
+    color: rgb(var(--text-color));
+    font-family: var(--font-primary);
+    font-size: 1.6rem;
+    line-height: 1.2;
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cover {
+    overflow: hidden;
+}
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------------------
+  03 - ICOMOON
+--------------------- */
+.icon-html5 {
+    color: #e34f26;
+}
+.icon-css {
+    color: #663399;
+}
+.icon-javascript {
+    color: #f7df1e;
+}
+.icon-tailwindcss {
+    color: #06b6d4;
+}
+.icon-vuedotjs {
+    color: #4fc08d;
+}
+.icon-photoshop {
+    color: #8bc3fc;
+}
+.icon-xd {
+    color: #f75eee;
+}
+.icon-illustrator {
+    color: #f8a829;
+}
+.icon-figma {
+    color: #f24e1e;
+}
+.icon-php {
+    color: #777bb4;
+}
+.icon-wordpress {
+    color: #21759b;
+}
+.icon-git {
+    color: #f05032;
+}
+.icon-github {
+    color: #181717;
+}
+.py-50 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}

@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?k7uy7v');
+  src:  url('fonts/icomoon.eot?k7uy7v#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?k7uy7v') format('truetype'),
+    url('fonts/icomoon.woff?k7uy7v') format('woff'),
+    url('fonts/icomoon.svg?k7uy7v#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chat:before {
+  content: "\e914";
+}
+.icon-copy:before {
+  content: "\e903";
+}
+.icon-user:before {
+  content: "\e915";
+}
+.icon-illustrator:before {
+  content: "\e904";
+}
+.icon-xd:before {
+  content: "\e905";
+}
+.icon-photoshop:before {
+  content: "\e906";
+}
+.icon-check:before {
+  content: "\e90d";
+}
+.icon-download:before {
+  content: "\e90a";
+}
+.icon-github:before {
+  content: "\e907";
+}
+.icon-git:before {
+  content: "\e908";
+}
+.icon-wordpress:before {
+  content: "\e909";
+}
+.icon-php:before {
+  content: "\e90b";
+}
+.icon-figma:before {
+  content: "\e90c";
+}
+.icon-vuedotjs:before {
+  content: "\e90e";
+}
+.icon-tailwindcss:before {
+  content: "\e90f";
+}
+.icon-javascript:before {
+  content: "\e910";
+}
+.icon-html5:before {
+  content: "\e911";
+}
+.icon-css:before {
+  content: "\e912";
+}
+.icon-mail:before {
+  content: "\e902";
+}
+.icon-moon:before {
+  content: "\e900";
+}
+.icon-sun:before {
+  content: "\e901";
+}
+.icon-send:before {
+  content: "\e916";
+}
+.icon-email1:before {
+  content: "\e913";
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-linkedin:before {
+  content: "\eaca";
+}
+.icon-file:before {
+  content: "\e926";
+}

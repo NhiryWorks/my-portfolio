@@ -1,0 +1,426 @@
+/* -------------
+    SOMMAIRE
+------------- */
+
+/* @AUTHOR : Nicolas BOUDOT */
+
+/*
+  1 - TITRE
+        Size
+        Complément de style
+  2 - CONTENU WISYWIG
+        Liste
+        Mise en forme - Inline
+        Mise en forme - Block
+        Citation
+        Tableau
+*/
+
+
+
+/* -----------------
+    1 - TITRE
+          Size
+----------------- */
+
+h1, .like-h1, .size-h1 {
+	font-size: 3.2rem;
+}
+
+    @media (min-width: 768px) {
+       h1, .like-h1, .size-h1 {
+            font-size: 4rem;
+        }
+    }
+
+h2, .like-h2, .size-h2 {
+	font-size: 2.4rem;
+}
+
+    @media (min-width: 768px) {
+        h2, .like-h2, .size-h2 {
+            font-size: 3rem;
+        }
+    }
+
+h3, .like-h3, .size-h3 {
+	font-size: 2rem;
+}
+
+    @media (min-width: 768px) {
+        h3, .like-h3, .size-h3 {
+            font-size: 2.4rem;
+        }
+    }
+
+h4, .like-h4, .size-h4 {
+	font-size: 1.8rem;
+}
+
+    @media (min-width: 768px) {
+        h4, .like-h4, .size-h4 {
+            font-size: 2rem;
+        }
+    }
+
+h5, .like-h5, .size-h5 {
+	font-size: 1.6rem;
+}
+
+    @media (min-width: 768px) {
+        h5, .like-h5, .size-h5 {
+            font-size: 1.8rem;
+        }
+    }
+
+h6, .like-h6, .size-h6 {
+	font-size: 1.4rem;
+}
+
+
+
+/* -----------------------------
+    1 - TITRE
+          Complément de style
+----------------------------- */
+
+/* Reset l'espacement vertical des titres */
+h1, h2, h3, h4, h5, h6,
+.like-h1, .like-h2, .like-h3, .like-h4, .like-h5, .like-h6,
+.size-h1, .size-h2, .size-h3, .size-h4, .size-h5, .size-h6 {
+	line-height: 1;
+}
+
+/*
+  Infos :
+    Les pseudos-classes :not(:firts-child) permettent de cibler les Hn
+    dans l'éditeur WYSIWYG quand les paragraphes se suivent.
+*/
+
+h1, .like-h1 {
+    color: var(--gray-600);
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    margin-bottom: 36px;
+}
+
+    /* @changelog 2024-01-18 [EVOL] (Nicolas) Pas utilisé ici mais pratique sur d'autres sites */
+    /* h1:not(:first-child), .like-h1:not(:first-child) {
+        margin-top: 50px;
+    } */
+
+h2, .like-h2 {
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+    h2:not(:first-child), .like-h2:not(:first-child) {
+        margin-top: 50px;
+    }
+
+h3, .like-h3 {
+    color: var(--c-primary);
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+    h3:not(:first-child), .like-h3:not(:first-child) {
+        margin-top: 50px;
+    }
+
+h4, .like-h4 {
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+    h4:not(:first-child), .like-h4:not(:first-child) {
+        margin-top: 50px;
+    }
+
+
+
+/* -------------------------
+    2 - CONTENU WYSIWYG
+------------------------- */
+
+/* Tous */
+*:last-child {
+    margin-bottom: 0;
+}
+
+/* Paragraphe */
+p {
+    line-height: 1.5;
+}
+
+    p:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+
+/* Lien */
+a {
+	color: var(--black);
+    text-decoration: none;
+}
+
+    a:hover {
+        /* color: var(--c-secondary); */
+    }
+
+    /* Lien dans l'éditeur WYSIWYG */
+    p a {
+        color: var(--c-hyperlink);
+        text-decoration: underline;
+    }
+
+
+
+/* -------------------------
+    2 - CONTENU WYSIWYG
+        Liste
+------------------------- */
+
+/*
+  Infos :
+    La pseudo-classe :not([class]) est utilisée pour cibler les listes de l'éditeur WYSIWYG et moins impacter les autres listes
+    (Menu Header, Menu Footer, Réassurance, Témoignages, etc).
+*/
+
+/* Liste - Non ordonné */
+ul:not([class]) {
+    text-align: left;
+	margin: 5px 0 50px;
+}
+
+ul li {
+    list-style: none;
+}
+
+    ul:not([class]) li {
+        position: relative;
+        list-style: none;
+        padding: 0 0 0 20px;
+    }
+
+        ul:not([class]) li + li {
+            margin-top: 15px;
+        }
+
+        ul:not([class]) li::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgb(var(--text-color));
+        }
+
+
+/* Liste - Ordonnée */
+ol:not([class]) {
+    counter-reset: numList;
+    font-family: var(--font-secondary);
+    text-align: left;
+    margin: 5px 0 50px 15px;
+}
+
+ol li {
+    list-style-type: none;
+}
+
+	ol:not([class]) li::before {
+		content: "0" counter(numList);
+		counter-increment: numList;
+        color: var(--c-primary);
+        font-family: var(--font-primary);
+		font-weight: 800;
+		margin: 0 5px 0 0;
+	}
+
+
+/* Liste - Descriptions */
+dl {
+	margin:10px 5px;
+}
+
+dt {
+    color:var(--black);
+    font-size:1.1em;
+    font-weight:bold;
+}
+
+dd {
+    font-style:normal;
+    margin:0;
+    padding:0;
+    text-indent:10px;
+}
+
+
+
+/* ---------------------------------
+    2 - CONTENU WYSIWYG
+        Mise en forme - Inline
+--------------------------------- */
+
+/* Strong */
+b,
+strong {
+	font-weight: 700;
+}
+
+    p strong {
+        color: var(--gray-700);
+    }
+
+/* Italic */
+em {
+	font-style: italic;
+}
+
+em strong, strong em{
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Soulignement */
+u {
+	text-decoration: underline;
+}
+
+/* Barré */
+strike, /* obsolète */
+s {
+	text-decoration: line-through;
+}
+
+/* Accronyme */
+acronym, /* obsolète */
+abbr {
+	border-bottom: 1px dashed var(--c-secondary);
+	cursor: help;
+}
+
+/* Exposant */
+sup, sub {
+    position: relative;
+    vertical-align: 0;
+}
+
+sup {
+    bottom: 1ex;
+}
+
+sub {
+    top: .5ex;
+}
+
+
+
+/* ---------------------------------
+    2 - CONTENU WYSIWYG
+        Mise en forme - Block
+--------------------------------- */
+
+/* Contact */
+address {
+	color: var(--c-secondary);
+}
+
+/* Code */
+code {
+	background-color: var(--c-secondary);
+	color: var(--white);
+	font-family: var(--font-primary);
+	font-size: 1.1em;
+	padding: 2px;
+}
+
+/* Préformaté */
+pre {
+	background-color: var(--gray-400);
+	border: 1px solid var(--c-secondary);
+	font-family: var(--font-primary);
+	font-size: 1.1em;
+	margin: 20px auto;
+	overflow: auto;
+	padding: 5%;
+	width: 80%;
+}
+
+/* Séparateur */
+hr {
+    border-bottom: 5px solid var(--c-primary);
+    margin: 45px auto 30px;
+    width: 60px;
+}
+
+
+/* -------------------------
+    2 - CONTENU WYSIWYG
+        Citation
+------------------------- */
+
+/* Citation */
+cite {
+	color: var(--black);
+	font-family: "Arial", sans-serif;
+	font-size: 1.1em;
+	padding: 0 3px;
+}
+
+/* Citation en incise */
+q {
+	color: var(--c-secondary);
+	font-style: italic;
+}
+
+	q::after {
+		content: " ' Source: "attr(cite)" ";
+		font-size: 1em;
+	}
+
+
+
+/* -------------------------
+    2 - CONTENU WYSIWYG
+        Tableau
+------------------------- */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 1px solid var(--gray-400);
+	margin: auto;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+table caption {
+    color: var(--gray-400);
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: left;
+}
+
+th {
+	color: var(--gray-600);
+	border: 1px solid var(--gray-400);
+	font-size: 14px;
+	font-weight: bold;
+	padding: 2px;
+}
+
+td {
+	border: 1px solid var(--gray-400);
+	padding: 2px;
+}
+
+td img {
+	padding: 3px;
+}
